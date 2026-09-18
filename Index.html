@@ -20,15 +20,15 @@
         <div class="Container-header">
             <div class="Head headContent">
  <!--Navigation Bar -->
-                <nav class="navbar custom-navbar navigation" id="navbar" active>
+                <nav class="navbar custom-navbar navigation scroll-up" id="navbar" active>
                     <div class="bandlogo">
                         <a href="#">
                             <img id="logo" src="assets/img/logo.png" alt="" height="140px" width="440px">
                         </a>
                     </div>
                <!--NAVIGATION ELEMENTS-->     
-                    <div class=" collapse navbar-collapse" id="navmenu">
-                        <ul class="nav-elements ml-auto">
+                    <div class=" collapse navbar-collapse navbar-expand navbar-scroll fixed-top affix-top active" id="navmenu">
+                        <ul class="nav-elements ml-auto scroll-up">
                             <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="Projects.html">Music</a></li>
                             <li class="nav-item"><a class="nav-link" href="Projects.html">Videos</a></li>
@@ -52,4 +52,15 @@
 
 </body>
 
+<script>
+const navbar = document.querySelector("#navmenu");
+
+window.addEventListener("scroll", () => {
+    navbar.classList.toggle("navbar-scroll", window.scrollY > 140);
+});
+
+window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scroll-up", "nav-item", window.scrollY > 160);
+});
+</script>
 </html>
